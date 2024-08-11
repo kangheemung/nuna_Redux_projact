@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+
 import './App.css';
+import React, { useState } from 'react';
+//버튼을 누른다.
+//버튼을 누르면 +1씩 증가된 숫자 출력
 
 function App() {
+  const [num, setNum]=useState(0);
+  const increaseNum= ()=>{
+    setNum(num + 1);
+    console.log(num);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={increaseNum}> 플러스+1추가</button>
+      출력값: {num}
     </div>
   );
 }
