@@ -11,6 +11,11 @@
   align-items: center;
   justify-content: center;
 }
+.container{
+  display: flex;
+ border: #b93535 10px solid;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

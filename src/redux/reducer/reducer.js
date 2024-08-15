@@ -1,3 +1,5 @@
+
+
 //초기화
 //初期化
 let initialState ={
@@ -16,23 +18,17 @@ function reducer(state = initialState, action){
    // }
     switch(action.type){
         case "INCREMENT":
-            const { num } = action.payload;
-            const totalValue = state.strength + state.power + state.speed + state.luck;
-            const strengthIncrement = Math.floor((state.strength / totalValue) * num);
-            const powerIncrement = Math.floor((state.power / totalValue) * num);
-            const speedIncrement = Math.floor((state.speed / totalValue) * num);
-            const luckIncrement = num - (strengthIncrement + powerIncrement + speedIncrement);
+            return { ...state, count: state.count + action.payload.num };
         case "DECREASE":
-        return { ...state, count: state.count - action.payload.num };
+        return { ...state, count: state.count - 1 };
         case "LOGIN":
-            return {
-                ...state,
-                id: action.payload.id,
-                password: action.payload.password,
-                };
-
+            return { ...state, id: action.payload.id, password: action.payload.password };
+        case "SET_ID":
+            return { ...state, id: action.payload };
+        case "SET_PASSWORD":
+            return { ...state, password: action.payload };
             default:
-            return{...state};
+                return state;
     }
 }
 
