@@ -5,22 +5,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 
 function App() {
-  const count = useSelector(state => state.count); // Assuming 'count' is stored in the Redux store
+  const count = useSelector(state => state.count);
   const id = useSelector(state => state.id);
   const password = useSelector(state => state.password);
-
-  const reduxDispatch = useDispatch();
-
-  const increaseNum = () => {
-    reduxDispatch({ type: "INCREMENT", payload: { num: 5 } });
-  };
-
-  const decrease = () => {
-    reduxDispatch({ type: "DECREASE" });
+  const status = useSelector(state => state.status);
+  const dispatch = useDispatch();
+  const handleStatusChange = (type) => {
+      dispatch({ type: type });
   };
 
   const login = () => {
-    reduxDispatch({ type: "LOGIN", payload: { id, password } });
+    dispatch({ type: "LOGIN", payload: { id, password } });
   };
 
   const blockThreshold = 50;
@@ -28,24 +23,18 @@ function App() {
 
   return (
     <div className="App">
-      <h1>
         <div>name:{id} password:{password}</div>
         <input placeholder='이름을 적어주세요'value={id}
-         onChange={(e) => reduxDispatch({ type: "SET_ID", payload: e.target.value })} />
-        <input placeholder='좋아하는 번호를 적어주세요 ' value={password} onChange={(e) => reduxDispatch({ type: "SET_PASSWORD", payload: e.target.value })} />
-        <Button as="a" variant="primary" onClick={login}>Login</Button>
-      </h1>
-      <Button as="a" variant="success" onClick={increaseNum}>플러스 +1 추가</Button>
-  
-      <Button as="a" variant="success" onClick={decrease}>감소</Button>
-      감소출력값: {count}
-  <div className='container'>
-      <Box value="Strength" num="40"/>
-      <Box value="Power" num="30"/>
-      <Box value="Speed" num="10"/>
-      <Box value="Luck" num="4"/>
+         onChange={(e) => dispatch({ type: "LOGIN", payload: e.target.value })} />
+        <input placeholder='좋아하는 번호를 적어주세요 ' value={password} onChange={(e) => dispatch({ type: "LOGIN", payload: e.target.value })} />
+        <h1>Game Character Status</h1>
+            <div className="status-container">
+            {Object.entries(status).map(([key, value]) => (
+                <Box key={key} title={key} value={value} onIncrement={() => handleStatusChange(`INCREMENT_${key.toUpperCase()}`)} 
+                    onDecrement={() => handleStatusChange(`DECREASE_${key.toUpperCase()}`)} />
+            ))}
+            </div>
       </div>
-    </div>
   );
 }
 
