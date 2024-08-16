@@ -10,7 +10,7 @@ let initialState ={
         power: 10,
         speed: 6,
         defense: 40,
-        luck: 1
+        luck: 10
     }
 }
 

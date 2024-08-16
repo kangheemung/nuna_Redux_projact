@@ -1,74 +1,38 @@
 .App {
-  text-align: center;
-  background-color: #282c34;
   height: 100vh;
+  background-color: #123d37;
+text-align: center;
+
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+}
+.App  h1{
+
   color: aliceblue;
+}
+.name{
+  color: #fff;
+}
+.status-container {
+  border: 6px solid whitesmoke;
+  background-color: whitesmoke;
+  border-radius: 10%;
+  max-width: 900px;
+  margin: 10px;
+padding: 10px;
+  display: flex;
   align-items: center;
   justify-content: center;
+ 
+  flex-wrap: wrap;
 }
-.state_box{border: #f9f9f9 10px solid;
-  width: 500px;
+
+.state_box {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: center;
+  border: 2px solid #472e00;
+  width: 300px; 
+  border-radius: 10%;
+  margin: 10px; /* Add margin for spacing */
 }
-.container{
-  display: flex;
- border: #b93535 10px solid;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-.App-link {
-  color: #61dafb;
-}
-.blocks-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-.filled {
-  background-color: orange;
-}
-
-.count-block {
-  width: 50px;
-  height: 50px;
-  background-color: lightblue;
-  margin: 5px;
-}
-
-.rise {
-  transform: translateY(-20px);
-}
-.star {
-  width: 20px;
-  height: 20px;
-  background-color: yellow;
-  position: absolute;
-  animation: falling-star 3s ease-out infinite;
-}
-.falling {
-  animation: fall 2s linear infinite;
-}
-.state_box{display: flex;}
-
-@keyframes falling-star {
-  0% {
-    opacity: 1;
-    transform: translateY(0) rotate(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(100vh) rotate(720deg);
-  }
-}
-
-
