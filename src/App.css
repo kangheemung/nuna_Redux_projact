@@ -1,11 +1,16 @@
 .App {
   height: 100vh;
   background-color: #123d37;
-text-align: center;
+
+  text-align: center;
 
   justify-content: center; /* Center the content horizontally */
-  align-items: center; /* Center the content vertically */
+  align-items: center;
 }
+.body_container{
+  padding-top: 10em;
+}
+.name{margin: 1em;}
 .state_box {
   display: flex;
   justify-content: space-between;}
@@ -33,7 +38,9 @@ text-align: center;
   color: #fff;
 }
 .img{width: 150px;}
-
+.image-container{
+  color: aliceblue;
+}
 .box{border: 6px solid rgb(71, 71, 71);
   background-color: whitesmoke;}
 .status-container {
