@@ -6,6 +6,18 @@ text-align: center;
   justify-content: center; /* Center the content horizontally */
   align-items: center; /* Center the content vertically */
 }
+.state_box {
+  display: flex;
+  justify-content: space-between;}
+
+.text_area {
+  display: flex;
+  align-items: center;
+}
+
+.state_text_title {
+  margin-right: 10px; 
+}
 .App  h1{
 
   color: aliceblue;
@@ -15,9 +27,15 @@ text-align: center;
   font-weight: bold;
   margin-right: 5px;
 }
+.grouped-items{display: flex;
+}
 .name{
   color: #fff;
 }
+.img{width: 150px;}
+
+.box{border: 6px solid rgb(71, 71, 71);
+  background-color: whitesmoke;}
 .status-container {
   border: 6px solid whitesmoke;
   background-color: whitesmoke;
@@ -27,7 +45,7 @@ text-align: center;
   padding: 10px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content:center;
   flex-wrap: wrap;
 }
 .text_area{
