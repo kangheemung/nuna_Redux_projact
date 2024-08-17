@@ -6,6 +6,7 @@ let initialState ={
     count:0,
     id:"",
     password:"",
+    additionalPoints: 10,
     status: {
         power: 10,
         speed: 6,
@@ -37,6 +38,10 @@ function reducer(state = initialState, action){
             return { ...state, status: { ...state.status, luck: state.status.luck + 1 } };
         case "DECREASE_LUCK":
             return { ...state, status: { ...state.status, luck: state.status.luck - 1 } };
+        case "INCREMENT_POINTS":
+            return { ...state, additionalPoints:  state.additionalPoints - 1 };
+        case "DECREMENT_POINTS":
+            return { ...state, additionalPoints: state.additionalPoints + 1 };
         case "LOGIN":
             return { ...state, id: action.payload.id, password: action.payload.password };
 
