@@ -1,4 +1,5 @@
 
+import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Box from "./component/Box";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,29 +13,37 @@ function App() {
   const status = useSelector(state => state.status);
   const additionalPoints = useSelector((state) => state.additionalPoints);
   const dispatch = useDispatch();
-
   const handleStatusChange = (type) => {
       dispatch({ type: type });
   };
-
-  const login = () => {
-    dispatch({ type: "LOGIN", payload: { id, password } });
+  const handleLogin = () => {
+    const inputVal = document.getElementById('name-input').value;
+    dispatch({ type: 'LOGIN', payload: { id: inputVal }});
+    document.getElementById('name-input').value = '';
   };
 
 
- 
 
-
-
+  
 
   const blockThreshold = 50;
   const stars = Array.from({ length: Math.floor(count / 100) }, (_, index) => index);
 
   return (
     <div className="App">
-        <div className='name'>name:{id} </div>
+        <div className='name'>name: {id}</div>
 
-       <input placeholder='이름을 적어주세요'value={id} onChange={(e) => dispatch({ type: "LOGIN", payload: e.target.value })} />
+        <input
+        id="name-input"
+        
+      
+        placeholder='名前を入力してください'
+       
+      />
+        <button onClick={handleLogin}>
+        Update Name
+      </button>
+
         <h1>Game Character Status</h1>
         <div  className='name'>
           <p>Total 추가 가능  Points: {additionalPoints}</p>

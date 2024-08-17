@@ -10,6 +10,11 @@ text-align: center;
 
   color: aliceblue;
 }
+.state_text_title{
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 5px;
+}
 .name{
   color: #fff;
 }
@@ -19,17 +24,20 @@ text-align: center;
   border-radius: 10%;
   max-width: 900px;
   margin: 10px;
-padding: 10px;
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
- 
   flex-wrap: wrap;
+}
+.text_area{
+  display: flex;
+  margin-left: 10px;
 }
 
 .state_box {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   border: 2px solid #472e00;
   width: 300px; 

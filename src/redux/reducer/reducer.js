@@ -5,7 +5,6 @@
 let initialState ={
     count:0,
     id:"",
-    password:"",
     additionalPoints: 10,
     status: {
         power: 10,
@@ -43,7 +42,7 @@ function reducer(state = initialState, action){
         case "DECREMENT_POINTS":
             return { ...state, additionalPoints: state.additionalPoints + 1 };
         case "LOGIN":
-            return { ...state, id: action.payload.id, password: action.payload.password };
+            return { ...state, id: action.payload.id };
 
             default:
                 return state;

@@ -24,19 +24,18 @@ const Box = ({ title, value, onIncrement, onDecrement }) => {
   return (
         <div>
             <div className="state_box">
-                <h3>{title}</h3>
-                <p>{value}</p>
+              <div className='text_area'>
+                <div className='state_text_title'>{title}</div>
+                <div className='state_text_num'>{value}</div>
+              </div>
+              <div>
                 <Button as="a" variant="success" onClick={handleIncrement} disabled={additionalPoints === 0}>
           +1
         </Button>
-
-
-
-
-
         <Button as="a" variant="danger" onClick={handleDecrement} disabled={additionalPoints === 10}>
           -1
         </Button>
+        </div>
             </div>
         </div>
     );
