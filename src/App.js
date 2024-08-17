@@ -79,9 +79,10 @@ function App() {
           <div>일반인</div>
         </div>
       )}
-      <div className="status-container" style={{ display: 'flex', flexDirection: 'row' }}>
+      <div className='status_body'>
+      <div className="status-container" >
         {Object.entries(status).map(([key, value]) => (
-          <div style={{ display: 'flex', alignItems: 'center' }}>
+          <div >
             <div className="grouped-items">
               <Box
                 title={key}
@@ -92,7 +93,9 @@ function App() {
               />
             </div>
           </div>
+         
         ))}
+       </div>  
       </div>
     </div>
   </div>

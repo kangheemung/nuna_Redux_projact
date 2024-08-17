@@ -32,7 +32,11 @@
   font-weight: bold;
   margin-right: 5px;
 }
-.grouped-items{display: flex;
+.grouped-items{
+  display: flex;
+  text-align: center;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center;
 }
 .name{
   color: #fff;
@@ -43,7 +47,13 @@
 }
 .box{border: 6px solid rgb(71, 71, 71);
   background-color: whitesmoke;}
-.status-container {
+  .status_body{
+    display: flex;
+  text-align: center;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center;
+  }
+  .status-container {
   border: 6px solid whitesmoke;
   background-color: whitesmoke;
   border-radius: 10%;
@@ -51,8 +61,9 @@
   margin: 10px;
   padding: 10px;
   display: flex;
+  text-align: center;
+  justify-content: center; /* Center the content horizontally */
   align-items: center;
-  justify-content:center;
   flex-wrap: wrap;
 }
 .text_area{
